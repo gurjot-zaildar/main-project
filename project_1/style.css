@@ -1,0 +1,196 @@
+body, html {
+  padding: 0%;
+  margin: 0%;
+  background-color: rgb(0, 18, 37);
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main .top {
+  display: flex;
+  flex-direction: column;
+}
+.main .top .nav {
+  width: 96%;
+  height: 60px;
+  background-color: aqua;
+  margin-top: 15px;
+  border-radius: 12px;
+  margin-left: 2%;
+}
+.main .top .timebox {
+  width: 96%;
+  height: 300px;
+  background-color: rgb(189, 213, 213);
+  margin-top: 20px;
+  margin-left: 2%;
+  border-radius: 12px;
+}
+.main .allfeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.main .allfeatures .todo {
+  width: 70%;
+  height: 300px;
+  margin-top: 30px;
+  border-radius: 12px;
+  margin-left: 15%;
+  position: relative;
+}
+.main .allfeatures .todo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  border-radius: 12px;
+}
+.main .allfeatures .todo h1 {
+  color: rgb(0, 94, 255);
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+}
+.main .allfeatures .dailyplanning {
+  width: 70%;
+  height: 300px;
+  margin-top: 30px;
+  border-radius: 12px;
+  margin-left: 15%;
+  position: relative;
+}
+.main .allfeatures .dailyplanning img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  border-radius: 12px;
+}
+.main .allfeatures .dailyplanning h1 {
+  color: rgb(0, 18, 181);
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+}
+.main .allfeatures .motivation {
+  width: 70%;
+  height: 300px;
+  position: relative;
+  margin-top: 30px;
+  border-radius: 12px;
+  margin-left: 15%;
+}
+.main .allfeatures .motivation img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  border-radius: 12px;
+}
+.main .allfeatures .motivation h1 {
+  color: rgb(243, 243, 243);
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+}
+.main .allfeatures .pomodorotimer {
+  width: 70%;
+  height: 300px;
+  margin-top: 30px;
+  border-radius: 12px;
+  margin-left: 15%;
+  position: relative;
+}
+.main .allfeatures .pomodorotimer img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  -o-object-position: 35%;
+     object-position: 35%;
+  border-radius: 12px;
+}
+.main .allfeatures .pomodorotimer h1 {
+  color: rgb(25, 0, 255);
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+}
+.main .allfeatures .dailygoles {
+  width: 70%;
+  height: 300px;
+  margin-top: 30px;
+  border-radius: 12px;
+  margin-left: 15%;
+  position: relative;
+}
+.main .allfeatures .dailygoles img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  -o-object-position: 100%;
+     object-position: 100%;
+  border-radius: 12px;
+}
+.main .allfeatures .dailygoles h1 {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+}
+.main .fullelem {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  display: none;
+}
+
+@media (min-width: 980px) {
+  .main .allfeatures {
+    flex-direction: row;
+    padding: 30px;
+  }
+  .main .allfeatures :hover {
+    transform: scale(1.02);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .main .allfeatures :active {
+    scale: 0.98;
+  }
+  .main .allfeatures .todo {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .main .allfeatures .dailyplanning {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .main .allfeatures .motivation {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .main .allfeatures .pomodorotimer {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .main .allfeatures .dailygoles {
+    width: 100%;
+    margin-left: 0%;
+  }
+}
