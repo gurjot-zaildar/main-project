@@ -39,6 +39,8 @@ html {
         flex-direction: column;
         gap: 30px;
 
+        
+
         .todo {
             width: 70%;
             height: 300px;
@@ -189,6 +191,7 @@ html {
 
         }
     }
+
 
     .todolistpage {
         // ! display: block;
@@ -365,7 +368,91 @@ html {
 }
 
 .motivationpage{
-    
+display: block;
+height: 100%;
+width: 100%;
+position: relative;
+.motivationfullpagecontainer{
+    background-color: aqua;
+    width: 80%;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 12px;
+       
+.motivationwrapper{
+    background-color: blue;
+    border-radius: 12px;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    img{
+        height: 60px;
+        margin-top: 20px;
+position: absolute;
+margin-left: 70%;
+    }
+    .motivation-1{
+        margin-left: 10px;
+        background-color: blueviolet;
+        padding: 10px;
+        border-radius: 12px;
+        width: 180px;
+        h1{
+color: black;
+        }
+    }
+    .motivation-2{
+        padding: 20px;
+        h1{
+color: black;
+        }
+    }
+    .motivation-3{
+        background-color: brown;
+        text-align: center;
+        border-radius: 12px;
+        padding: 1px;
+        width:200px;
+        margin-left: 100px;
+        h1{
+            color: black;
+        }
+    }
+}
+}
+}
+
+.pomodorotimerpage{
+    display: block;
+    height: 100%;
+    width: 100%;
+    .timer{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        h2{
+            text-align: center;
+            background-color: aqua;
+            color: black;
+        }
+        h1{
+             text-align: center;
+            color: aqua;
+            font-size: 3rem;
+            
+        }
+        button{
+            border-radius: 5px;
+            border: none;
+            box-shadow: 5px 5px 5px;
+            font-size: larger;
+            margin-left: 10px;
+        }
+    }
 }
 
 @media (min-width : 900px) {
