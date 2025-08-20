@@ -23,13 +23,29 @@ html {
   border-radius: 12px;
   margin-left: 2%;
 }
-.main .top .timebox {
+.main .top header {
+  background-image: url(https://images.unsplash.com/photo-1717361279773-b2e7ee713d2e?q=80&w=3869&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+  background-size: cover;
   width: 96%;
   height: 300px;
   background-color: rgb(189, 213, 213);
   margin-top: 20px;
   margin-left: 2%;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.main .top header .header1 {
+  margin-top: 10px;
+  margin-left: 20px;
+  line-height: 10px;
+  height: 100px;
+}
+.main .top header .header2 {
+  margin-top: 20px;
+  line-height: 6px;
+  padding: 20px;
 }
 .main .allfeatures {
   display: flex;
@@ -158,13 +174,13 @@ html {
 .main .fullelem {
   height: 100%;
   width: 100%;
-  background-color: rgb(78, 35, 35);
+  background-color: #121212;
   display: none;
   color: aliceblue;
   position: absolute;
 }
 .main .fullelem h1 {
-  color: aqua;
+  color: rgb(249, 249, 249);
 }
 .main .fullelem .back {
   background-color: rgb(255, 5, 5);
@@ -182,7 +198,7 @@ html {
   height: 100%;
 }
 .main .todolistpage .todocontainer {
-  background-color: aqua;
+  background-color: #121212;
   width: 100%;
   height: 90%;
   display: flex;
@@ -192,11 +208,12 @@ html {
 .main .todolistpage .todocontainer .addtask {
   width: 96%;
   height: 44%;
-  background-color: rgb(17, 10, 220);
+  background-color: #1E1E2F;
   border-radius: 12px;
   margin-left: 2%;
   margin-right: 2%;
   margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 .main .todolistpage .todocontainer .addtask form {
   display: flex;
@@ -211,6 +228,9 @@ html {
   border-radius: 10px;
   border: none;
   height: 40px;
+  background-color: #2A2A3C;
+  color: #EAEAEA;
+  padding: 0 10px;
 }
 .main .todolistpage .todocontainer .addtask form textarea {
   height: 150px;
@@ -221,6 +241,9 @@ html {
   border-radius: 10px;
   border: none;
   resize: none;
+  background-color: #2A2A3C;
+  color: #EAEAEA;
+  padding: 10px;
 }
 .main .todolistpage .todocontainer .addtask form button {
   height: 50px;
@@ -230,7 +253,14 @@ html {
   margin-top: 2%;
   border-radius: 10px;
   border: none;
-  transition: all ease 0.4s;
+  background-color: #4A90E2;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.main .todolistpage .todocontainer .addtask form button:hover {
+  background-color: #357ABD;
 }
 .main .todolistpage .todocontainer .addtask .markimp {
   display: flex;
@@ -243,18 +273,20 @@ html {
 }
 .main .todolistpage .todocontainer .addtask .markimp label {
   margin-top: 10px;
+  color: #e0dede;
 }
 .main .todolistpage .todocontainer .alltask {
   width: 96%;
   height: 50%;
-  background-color: rgb(28, 201, 40);
+  background-color: #1E1E2F;
   border-radius: 12px;
   margin-left: 2%;
   margin-right: 2%;
   overflow: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 .main .todolistpage .todocontainer .alltask .task {
-  background-color: brown;
+  background-color: #2A2A3C;
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
@@ -264,24 +296,31 @@ html {
   justify-content: space-between;
 }
 .main .todolistpage .todocontainer .alltask .task h1 {
-  color: black;
-  padding: 0px 15px;
+  color: #EAEAEA;
+  padding: 10px 15px;
+  font-size: 1rem;
 }
 .main .todolistpage .todocontainer .alltask .task button {
-  background-color: aqua;
+  background-color: #72ff77;
+  color: #010a86;
   padding: 0px 15px;
   height: 30px;
   border-radius: 10px;
   margin-top: 17px;
   margin-right: 10px;
   border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main .todolistpage .todocontainer .alltask .task button:hover {
+  background-color: #44ff00;
 }
 .main .todolistpage .todocontainer .alltask .task span {
-  color: rgb(255, 0, 0);
-  background-color: rgb(0, 255, 149);
+  color: #ffffff;
+  background-color: #ff0000;
   font-size: small;
   border-radius: 50%;
-  padding: 2px 4px;
+  padding: 2px 6px;
 }
 .main .todolistpage .todocontainer .alltask .task span.false {
   opacity: 0;
@@ -289,124 +328,165 @@ html {
 .main .todolistpage .todocontainer .alltask .task span.true {
   opacity: 1;
 }
-
-.dailyplanningpage {
+.main .dailyplanningpage {
   height: 100%;
   width: 100%;
 }
-.dailyplanningpage .dailyplanner {
+.main .dailyplanningpage .dailyplanner {
   width: 96%;
   height: 90%;
-  background-color: aqua;
+  background-color: #121212;
   border-radius: 12px;
   margin-left: 2%;
   display: flex;
   flex-direction: column;
   overflow: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-.dailyplanningpage .dailyplanner .dailyplannertime {
-  width: 94%;
+.main .dailyplanningpage .dailyplanner .dailyplannertime {
+  width: 89%;
   height: 90px;
-  background-color: rgb(23, 18, 158);
+  background-color: #1E1E2F;
   margin-left: 3%;
   border-radius: 12px;
   margin-top: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.dailyplanningpage .dailyplanner .dailyplannertime input {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+.main .dailyplanningpage .dailyplanner .dailyplannertime input {
+  border-radius: 10px;
   border: none;
   height: 35px;
-  width: 99%;
+  width: 94%;
+  background-color: #2A2A3C;
+  color: #EAEAEA;
+  padding: 0 10px;
+  outline: none;
 }
-.dailyplanningpage .dailyplanner .dailyplannertime p {
+.main .dailyplanningpage .dailyplanner .dailyplannertime input:focus {
+  border: 1px solid #4A90E2;
+  box-shadow: 0 0 8px #4A90E2;
+}
+.main .dailyplanningpage .dailyplanner .dailyplannertime p {
   margin-left: 20px;
+  color: #E0E0E0;
+  font-size: 0.9rem;
 }
-
-.motivationpage {
+.main .motivationpage {
   display: block;
   height: 100%;
   width: 100%;
-  position: relative;
 }
-.motivationpage .motivationfullpagecontainer {
-  background-color: aqua;
+.main .motivationpage .motivationfullpagecontainer {
+  background-color: #e6fa32;
+  border-radius: 20px;
   width: 80%;
-  padding: 10px;
-  position: absolute;
-  top: 50%;
+  height: 24%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 12px;
+  filter: blur(50px);
+  position: absolute;
 }
-.motivationpage .motivationfullpagecontainer .motivationwrapper {
-  background-color: blue;
+.main .motivationpage .motivationwrapper {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 80%;
   border-radius: 12px;
-  z-index: 10;
-  height: 100%;
-  width: 100%;
+  border: solid;
+  border-color: #121212;
+  background-color: #00d0ff;
 }
-.motivationpage .motivationfullpagecontainer .motivationwrapper img {
-  height: 60px;
+.main .motivationpage .motivationwrapper img {
+  position: absolute;
+  height: 50px;
+  margin-left: 80%;
   margin-top: 20px;
-  position: absolute;
-  margin-left: 70%;
 }
-.motivationpage .motivationfullpagecontainer .motivationwrapper .motivation-1 {
-  margin-left: 10px;
-  background-color: blueviolet;
+.main .motivationpage .motivationwrapper .motivation-1 {
+  display: flex;
+}
+.main .motivationpage .motivationwrapper .motivation-1 h1 {
+  background-color: #010a86;
   padding: 10px;
+  margin-left: 10px;
   border-radius: 12px;
-  width: 180px;
 }
-.motivationpage .motivationfullpagecontainer .motivationwrapper .motivation-1 h1 {
-  color: black;
+.main .motivationpage .motivationwrapper .motivation-2 {
+  margin-left: 10px;
 }
-.motivationpage .motivationfullpagecontainer .motivationwrapper .motivation-2 {
-  padding: 20px;
+.main .motivationpage .motivationwrapper .motivation-3 {
+  display: flex;
+  justify-content: space-between;
 }
-.motivationpage .motivationfullpagecontainer .motivationwrapper .motivation-2 h1 {
-  color: black;
-}
-.motivationpage .motivationfullpagecontainer .motivationwrapper .motivation-3 {
-  background-color: brown;
-  text-align: center;
+.main .motivationpage .motivationwrapper .motivation-3 h1 {
+  background-color: #010a86;
+  padding: 10px;
+  margin-right: 10px;
   border-radius: 12px;
-  padding: 1px;
-  width: 200px;
-  margin-left: 100px;
 }
-.motivationpage .motivationfullpagecontainer .motivationwrapper .motivation-3 h1 {
-  color: black;
+.main .motivationpage .motivationwrapper .motivation-3 button {
+  margin-left: 20px;
+  padding: 0px 10px;
+  height: 35px;
+  margin-top: 25px;
+  border-radius: 10px;
+  border: none;
+  font-size: large;
 }
-
-.pomodorotimerpage {
-  display: block;
+.main .pomodorotimerpage {
   height: 100%;
   width: 100%;
+  background: #0f172a;
+  font-family: "Roboto", sans-serif;
 }
-.pomodorotimerpage .timer {
+.main .pomodorotimerpage .timer {
+  width: 80%;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.pomodorotimerpage .timer h2 {
+.main .pomodorotimerpage .timer h2 {
   text-align: center;
-  background-color: aqua;
-  color: black;
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border-radius: 8px;
+  padding: 6px 12px;
 }
-.pomodorotimerpage .timer h1 {
+.main .pomodorotimerpage .timer h1 {
   text-align: center;
-  color: aqua;
+  color: #3b82f6;
   font-size: 3rem;
+  font-weight: bold;
+  margin-top: 12px;
 }
-.pomodorotimerpage .timer button {
-  border-radius: 5px;
+.main .pomodorotimerpage .timer .flex {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.main .pomodorotimerpage .timer .flex button {
+  border-radius: 8px;
   border: none;
-  box-shadow: 5px 5px 5px;
-  font-size: larger;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #f9fafb;
+  padding: 10px 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
   margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s;
+}
+.main .pomodorotimerpage .timer .flex button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+}
+.main .pomodorotimerpage .timer .flex button:active {
+  transform: scale(0.96);
 }
 
 @media (min-width: 900px) {
