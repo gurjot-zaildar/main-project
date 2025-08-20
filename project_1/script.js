@@ -108,111 +108,112 @@ function dailypln() {
 
 dailypln()
 
-let qts = [
-    {
-        quotes: "Don’t watch the clock; do what it does. Keep going.",
-        author: "Sam Levenson"
-       
-    },
-    {
-        quotes: "Success is not in what you have, but who you are.",
-        author: "Bo Bennett"
-      
-    },
-    {
-        quotes: "The future depends on what you do today.",
-        author: "Mahatma Gandhi"
-        
-    },
-    {
-        quotes: "Great things never come from comfort zones.",
-        author: "Anonymous"
-        
-    },
-    {
-        quotes: "Dream bigger. Do bigger.",
-        author: "Anonymous"
-    
-    },
-    {
-        quotes: "Don’t stop until you’re proud.",
-        author: "Anonymous"
-    
-    },
-    {
-        quotes: "It always seems impossible until it’s done.",
-        author: "Nelson Mandela"
-        
-    },
-    {
-        quotes: "Push yourself, because no one else is going to do it for you.",
-        author: "Anonymous"
-       
-    },
-    {
-        quotes: "Hard work beats talent when talent doesn’t work hard.",
-        author: "Tim Notke"
-    
-    },
-    {
-        quotes: "Do something today that your future self will thank you for.",
-        author: "Sean Patrick Flanery"
-      
-    },
-    {
-        quotes: "Little things make big days.",
-        author: "Anonymous"
-        
-    },
-    {
-        quotes: "Don’t wait for opportunity. Create it.",
-        author: "George Bernard Shaw"
-        
-    },
-    {
-        quotes: "Sometimes later becomes never. Do it now.",
-        author: "Anonymous"
-       
-    },
-    {
-        quotes: "Success doesn’t just find you. You have to go out and get it.",
-        author: "Anonymous"
-        
-    },
-    {
-        quotes: "Your limitation—it’s only your imagination.",
-        author: "Anonymous"
-      
-    },
-    {
-        quotes: "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
-        author: "Eleanor Roosevelt"
-        
-    },
-    {
-        quotes: "Act as if what you do makes a difference. It does.",
-        author: "William James"
-    },
-    {
-        quotes: "The harder you work for something, the greater you’ll feel when you achieve it.",
-        author: "Anonymous"
-    },
-    {
-        quotes: "Believe you can and you’re halfway there.",
-        author: "Theodore Roosevelt"
-    }
-];
-let motivationwrapper=document.querySelector(".motivationwrapper")
-let qtsinput=document.querySelector(".motivation-2 h1");
-let authorinput=document.querySelector(".motivation-3 h1");
-let nextbtn=document.querySelector(".motivation-3 button");
+function moti() {
+    let qts = [
+        {
+            quotes: "Don’t watch the clock; do what it does. Keep going.",
+            author: "Sam Levenson"
+
+        },
+        {
+            quotes: "Success is not in what you have, but who you are.",
+            author: "Bo Bennett"
+
+        },
+        {
+            quotes: "The future depends on what you do today.",
+            author: "Mahatma Gandhi"
+
+        },
+        {
+            quotes: "Great things never come from comfort zones.",
+            author: "Anonymous"
+
+        },
+        {
+            quotes: "Dream bigger. Do bigger.",
+            author: "Anonymous"
+
+        },
+        {
+            quotes: "Don’t stop until you’re proud.",
+            author: "Anonymous"
+
+        },
+        {
+            quotes: "It always seems impossible until it’s done.",
+            author: "Nelson Mandela"
+
+        },
+        {
+            quotes: "Push yourself, because no one else is going to do it for you.",
+            author: "Anonymous"
+
+        },
+        {
+            quotes: "Hard work beats talent when talent doesn’t work hard.",
+            author: "Tim Notke"
+
+        },
+        {
+            quotes: "Do something today that your future self will thank you for.",
+            author: "Sean Patrick Flanery"
+
+        },
+        {
+            quotes: "Little things make big days.",
+            author: "Anonymous"
+
+        },
+        {
+            quotes: "Don’t wait for opportunity. Create it.",
+            author: "George Bernard Shaw"
+
+        },
+        {
+            quotes: "Sometimes later becomes never. Do it now.",
+            author: "Anonymous"
+
+        },
+        {
+            quotes: "Success doesn’t just find you. You have to go out and get it.",
+            author: "Anonymous"
+
+        },
+        {
+            quotes: "Your limitation—it’s only your imagination.",
+            author: "Anonymous"
+
+        },
+        {
+            quotes: "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
+            author: "Eleanor Roosevelt"
+
+        },
+        {
+            quotes: "Act as if what you do makes a difference. It does.",
+            author: "William James"
+        },
+        {
+            quotes: "The harder you work for something, the greater you’ll feel when you achieve it.",
+            author: "Anonymous"
+        },
+        {
+            quotes: "Believe you can and you’re halfway there.",
+            author: "Theodore Roosevelt"
+        }
+    ];
+    let motivationwrapper = document.querySelector(".motivationwrapper")
+    let qtsinput = document.querySelector(".motivation-2 h1");
+    let authorinput = document.querySelector(".motivation-3 h1");
+    let nextbtn = document.querySelector(".motivation-3 button");
 
 
-let index =0;
+    let index = 0;
 
-function qtsshow(){
- let nxtidx= qts[index]
-    let output= `<img src="/icons8-quote-100.png" alt="">
+    function qtsshow() {
+        let nxtidx = qts[index]
+        let output = `<img src="/icons8-quote-100.png" alt="">
             <div class="motivation-1">
               <h1>Quote of the day :-</h1>
             </div>
@@ -223,22 +224,23 @@ function qtsshow(){
               <button class="next">Next</button>
               <h1>${nxtidx.author}</h1>`
 
-              motivationwrapper.innerHTML=output;
+        motivationwrapper.innerHTML = output;
 
-              let newbtn=motivationwrapper.querySelector(".next");
-              
-              newbtn.addEventListener("click",nextquote)
-}
-function nextquote(){
-    index++
-    if(index>=qts.length) index =0;
+        let newbtn = motivationwrapper.querySelector(".next");
+
+        newbtn.addEventListener("click", nextquote)
+    }
+    function nextquote() {
+        index++
+        if (index >= qts.length) index = 0;
+        qtsshow()
+    }
     qtsshow()
+
+
 }
-qtsshow()
 
-
-
-
+moti()
 
 
 function potimer() {

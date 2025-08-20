@@ -10,20 +10,56 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
-
+    
+    
     .top {
         display: flex;
         flex-direction: column;
-
-        .nav {
-            width: 96%;
-            height: 60px;
-            background-color: aqua;
-            margin-top: 15px;
-            border-radius: 12px;
-            margin-left: 2%;
+        
+        .navbar {
+          left: 0;
+          width: 100%;
+          background-color: #222222; 
+          padding: 10px 0;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.7);
+          z-index: 1000;
+        
+          .logo {
+            display: none;
+          }
+        
+          ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        
+            li {
+              flex: 1;
+              text-align: center;
+        
+              a {
+                text-decoration: none;
+                color: #e5e5e5; 
+                font-size: 14px;
+                font-weight: 500;
+                display: block;
+                padding: 6px 0;
+                transition: color 0.3s;
+        
+                &:hover {
+                  color: #22c55e; 
+                }
+              }
+            }
+          }
         }
-
         header {
             background-image: url(https://images.unsplash.com/photo-1717361279773-b2e7ee713d2e?q=80&w=3869&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
             background-position: center;
@@ -36,14 +72,17 @@ html {
             border-radius: 12px;
             display: flex;
             flex-direction: column;
-            .header1{
+
+            .header1 {
                 margin-top: 10px;
                 margin-left: 20px;
                 line-height: 10px;
-            
+                color: #000000;
                 height: 100px;
             }
-            .header2{
+
+            .header2 {
+                color: #f2ff00d3;
                 margin-top: 20px;
                 line-height: 6px;
                 padding: 20px;
@@ -57,7 +96,7 @@ html {
         flex-direction: column;
         gap: 30px;
 
-        
+
 
         .todo {
             width: 70%;
@@ -185,18 +224,21 @@ html {
     }
 
     .fullelem {
+        z-index: 1000;
         height: 100%;
         width: 100%;
-        background-color:  #121212;;
+        background-color: #121212;
         display: none;
         color: aliceblue;
         position: absolute;
 
         h1 {
+            margin-left: 20px;
             color: rgb(249, 249, 249);
         }
 
         .back {
+            margin-top: 10px;
             background-color: rgb(255, 5, 5);
             padding: 15px 20px;
             border-radius: 12px;
@@ -209,340 +251,445 @@ html {
 
         }
     }
-    
-    .todolistpage { 
-    width: 100%;
-    height: 100%;
 
-    .todocontainer {
-        background-color: #121212; 
+    .todolistpage {
         width: 100%;
-        height: 90%;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+        height: 100%;
 
-        .addtask {
-            width: 96%;
-            height: 44%;
-            background-color: #1E1E2F; 
-            border-radius: 12px;
-            margin-left: 2%;
-            margin-right: 2%;
-            margin-top: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        .todocontainer {
+            background-color: #121212;
+            width: 100%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
 
-            form {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                position: relative;
+            .addtask {
+                width: 96%;
+                height: 44%;
+                background-color: #1E1E2F;
+                border-radius: 12px;
+                margin-left: 2%;
+                margin-right: 2%;
+                margin-top: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 
-                input {
-                    width: 90%;
-                    margin-left: 5%;
-                    margin-top: 4%;
-                    border-radius: 10px;
-                    border: none;
-                    height: 40px;
-                    background-color: #2A2A3C;
-                    color: #EAEAEA;
-                    padding: 0 10px;
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    position: relative;
+
+                    input {
+                        width: 90%;
+                        margin-left: 5%;
+                        margin-top: 4%;
+                        border-radius: 10px;
+                        border: none;
+                        height: 40px;
+                        background-color: #2A2A3C;
+                        color: #EAEAEA;
+                        padding: 0 10px;
+                    }
+
+                    textarea {
+                        height: 150px;
+                        width: 90%;
+                        margin-left: 5%;
+                        margin-right: 5%;
+                        margin-top: 2%;
+                        border-radius: 10px;
+                        border: none;
+                        resize: none;
+                        background-color: #2A2A3C;
+                        color: #EAEAEA;
+                        padding: 10px;
+                    }
+
+                    button {
+                        height: 50px;
+                        width: 90%;
+                        margin-left: 5%;
+                        margin-right: 5%;
+                        margin-top: 2%;
+                        border-radius: 10px;
+                        border: none;
+                        background-color: #4A90E2;
+                        color: #fff;
+                        font-weight: bold;
+                        cursor: pointer;
+                        transition: all ease 0.3s;
+                    }
+
+                    button:hover {
+                        background-color: #357ABD;
+                    }
                 }
 
-                textarea {
-                    height: 150px;
-                    width: 90%;
-                    margin-left: 5%;
-                    margin-right: 5%;
-                    margin-top: 2%;
-                    border-radius: 10px;
-                    border: none;
-                    resize: none;
-                    background-color: #2A2A3C;
-                    color: #EAEAEA;
-                    padding: 10px;
-                }
+                .markimp {
+                    display: flex;
+                    gap: 20px;
 
-                button {
-                    height: 50px;
-                    width: 90%;
-                    margin-left: 5%;
-                    margin-right: 5%;
-                    margin-top: 2%;
-                    border-radius: 10px;
-                    border: none;
-                    background-color: #4A90E2; 
-                    color: #fff;
-                    font-weight: bold;
-                    cursor: pointer;
-                    transition: all ease 0.3s;
-                }
+                    #check {
+                        width: 22px;
+                        margin: 0px;
+                        margin-left: 20px;
+                    }
 
-                button:hover {
-                    background-color: #357ABD; 
+                    label {
+                        margin-top: 10px;
+                        color: #e0dede;
+                    }
                 }
             }
 
-            .markimp {
-                display: flex;
-                gap: 20px;
+            .alltask {
+                width: 96%;
+                height: 50%;
+                background-color: #1E1E2F;
+                border-radius: 12px;
+                margin-left: 2%;
+                margin-right: 2%;
+                overflow: auto;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 
-                #check {
-                    width: 22px;
-                    margin: 0px;
-                    margin-left: 20px;
-                }
+                .task {
+                    background-color: #2A2A3C;
+                    width: 90%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    margin-top: 2%;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: space-between;
 
-                label {
-                    margin-top: 10px;
-                    color: #e0dede;
+                    h1 {
+                        color: #EAEAEA;
+                        padding: 10px 15px;
+                        font-size: 1rem;
+                    }
+
+                    button {
+                        background-color: #72ff77;
+                        color: #010a86;
+                        padding: 0px 15px;
+                        height: 30px;
+                        border-radius: 10px;
+                        margin-top: 17px;
+                        margin-right: 10px;
+                        border: none;
+                        cursor: pointer;
+                        transition: 0.3s;
+                    }
+
+                    button:hover {
+                        background-color: #44ff00;
+                    }
+
+                    span {
+                        color: #ffffff;
+                        background-color: #ff0000;
+                        font-size: small;
+                        border-radius: 50%;
+                        padding: 2px 6px;
+                    }
+
+                    span.false {
+                        opacity: 0;
+                    }
+
+                    span.true {
+                        opacity: 1;
+                    }
                 }
             }
         }
+    }
 
-        .alltask {
+    .dailyplanningpage {
+        height: 100%;
+        width: 100%;
+
+        .dailyplanner {
             width: 96%;
-            height: 50%;
-            background-color: #1E1E2F;
+            height: 90%;
+            background-color: #121212;
             border-radius: 12px;
             margin-left: 2%;
-            margin-right: 2%;
+            display: flex;
+            flex-direction: column;
             overflow: auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 
-            .task {
-                background-color: #2A2A3C; 
-                width: 90%;
-                margin-left: 5%;
-                margin-right: 5%;
-                margin-top: 2%;
-                border-radius: 10px;
+            .dailyplannertime {
+                width: 89%;
+                height: 90px;
+                background-color: #1E1E2F;
+                margin-left: 3%;
+                border-radius: 12px;
+                margin-top: 15px;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                input {
+                    border-radius: 10px;
+                    border: none;
+                    height: 35px;
+                    width: 94%;
+                    background-color: #2A2A3C;
+                    color: #EAEAEA;
+                    padding: 0 10px;
+                    outline: none;
+                }
+
+                input:focus {
+                    border: 1px solid #4A90E2;
+                    box-shadow: 0 0 8px #4A90E2;
+                }
+
+                p {
+                    margin-left: 20px;
+                    color: #E0E0E0;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    .motivationpage {
+        height: 100%;
+        width: 100%;
+        background: #0f172a;
+        font-family: "Roboto", sans-serif;
+
+        .motivationfullpagecontainer {
+            background-color: #859ec6;
+            border-radius: 20px;
+            width: 80%;
+            height: 24%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(50px);
+            position: absolute;
+        }
+
+        .motivationwrapper {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 80%;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            background-color: #1e293b;
+            color: #f9fafb;
+
+            img {
+                position: absolute;
+                height: 50px;
+                margin-left: 80%;
+                margin-top: 20px;
+            }
+
+            .motivation-1 {
+                display: flex;
+
+                h1 {
+                    background-color: #3b82f6;
+                    color: #f9fafb;
+                    padding: 10px;
+                    margin-left: 10px;
+                    border-radius: 12px;
+                    font-size: 18px;
+                }
+            }
+
+            .motivation-2 {
+                margin-left: 10px;
+                color: #e2e8f0;
+                font-size: 16px;
+            }
+
+            .motivation-3 {
                 display: flex;
                 justify-content: space-between;
 
                 h1 {
-                    color: #EAEAEA;
-                    padding: 10px 15px;
-                    font-size: 1rem;
+                    background-color: #3b82f6;
+                    color: #f9fafb;
+                    padding: 10px;
+                    margin-right: 10px;
+                    border-radius: 12px;
+                    font-size: 18px;
                 }
 
                 button {
-                    background-color: #72ff77;
-                    color: #010a86;
-                    padding: 0px 15px;
-                    height: 30px;
+                    margin-left: 20px;
+                    padding: 6px 12px;
+                    height: 40px;
+                    margin-top: 20px;
                     border-radius: 10px;
-                    margin-top: 17px;
-                    margin-right: 10px;
                     border: none;
+                    font-size: 15px;
+                    background: linear-gradient(135deg, #1e40af, #2563eb);
+                    color: #f9fafb;
                     cursor: pointer;
-                    transition: 0.3s;
-                }
+                    transition: background 0.3s, transform 0.2s;
 
-                button:hover {
-                    background-color: #44ff00;
-                }
+                    &:hover {
+                        background: linear-gradient(135deg, #1d4ed8, #2563eb);
+                    }
 
-                span {
-                    color: #ffffff;
-                    background-color: #ff0000; 
-                    font-size: small;
-                    border-radius: 50%;
-                    padding: 2px 6px;
-                }
-
-                span.false {
-                    opacity: 0;
-                }
-
-                span.true {
-                    opacity: 1;
+                    &:active {
+                        transform: scale(0.96);
+                    }
                 }
             }
         }
     }
-}
 
-.dailyplanningpage {
-    height: 100%;
-    width: 100%;
+    .pomodorotimerpage {
+        height: 100%;
+        width: 100%;
+        background: #0f172a;
+        font-family: "Roboto", sans-serif;
 
-    .dailyplanner {
-        width: 96%;
-        height: 90%;
-        background-color: #121212; 
-        border-radius: 12px;
-        margin-left: 2%;
-        display: flex;
-        flex-direction: column;
-        overflow: auto;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-
-        .dailyplannertime {
-            width: 89%;
-            height: 90px;
-            background-color: #1E1E2F;
-            margin-left: 3%;
-            border-radius: 12px;
-            margin-top: 15px;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            input {
-                border-radius: 10px;
-                border: none;
-                height: 35px;
-                width: 94%; 
-                background-color: #2A2A3C; 
-                color: #EAEAEA;           
-                padding: 0 10px;
-                outline: none;
-            }
-
-            input:focus {
-                border: 1px solid #4A90E2; 
-                box-shadow: 0 0 8px #4A90E2;
-            }
-
-            p {
-                margin-left: 20px;
-                color: #E0E0E0; 
-                font-size: 0.9rem;
-            }
-        }
-    }
-}
-
-
-.motivationpage{
-    display: block;
-    height: 100%;
-    width: 100%;
-    .motivationfullpagecontainer{
-        background-color: #e6fa32;
-        border-radius: 20px;
-        width: 80%;
-        height:24%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        filter: blur(50px);
-        position: absolute;
-        
-    }
-        .motivationwrapper{
-             left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-            position: absolute;
+        .timer {
             width: 80%;
-            border-radius: 12px;
-            border: solid;
-            border-color: #121212;
-           background-color: #00d0ff;
-           img{
             position: absolute;
-            height: 50px;
-            margin-left: 80%;
-            margin-top: 20px;
-           }
-           .motivation-1{
-            display: flex;
-            h1{
-                background-color: #010a86;
-                padding: 10px;
-                margin-left: 10px;
-                border-radius: 12px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            h2 {
+                text-align: center;
+                background-color: #1e293b;
+                color: #f1f5f9;
+                border-radius: 8px;
+                padding: 6px 12px;
             }
-           }
-           .motivation-2{
-            margin-left: 10px;
-           }
-           .motivation-3{
-             display: flex;
-            justify-content: space-between;
-            h1{
-                background-color: #010a86;
-                padding: 10px;
-                margin-right: 10px;
-                border-radius: 12px;
+
+            h1 {
+                text-align: center;
+                color: #3b82f6;
+                font-size: 3rem;
+                font-weight: bold;
+                margin-top: 12px;
             }
-            button{
-                margin-left: 20px;
-                padding: 0px 10px;
-                height: 35px;
-                margin-top: 25px;
-                border-radius: 10px;
-                border: none;
-                font-size: large;
+
+            .flex {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+
+                button {
+                    border-radius: 8px;
+                    border: none;
+                    background: linear-gradient(135deg, #1e40af, #2563eb);
+                    color: #f9fafb;
+                    padding: 10px 18px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+                    font-size: 16px;
+                    margin-left: 10px;
+                    cursor: pointer;
+                    transition: transform 0.2s ease, background 0.3s;
+
+                    &:hover {
+                        background: linear-gradient(135deg, #1d4ed8, #2563eb);
+                    }
+
+                    &:active {
+                        transform: scale(0.96);
+                    }
+                }
             }
-           }
         }
+    }
+
     
-}
-   
+  .footer {
+    margin-top: 50px;
+    background-color: #121212; 
+    color: #eaeaea;
+    padding: 16px 10px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 
- .pomodorotimerpage {
-    height: 100%;
-    width: 100%;
-    background: #0f172a; 
-    font-family: "Roboto", sans-serif;
-
-    .timer {
-        width: 80%;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-
-        h2 {
-            text-align: center;
-            background-color: #1e293b;
-            color: #f1f5f9;
-            border-radius: 8px;
-            padding: 6px 12px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #3b82f6;
-            font-size: 3rem;
-            font-weight: bold;
-            margin-top: 12px;
-        }
-        .flex{ 
-            display: flex;
-            gap: 20px;
-            justify-content: center;  
-        button {
-            border-radius: 8px;
-            border: none;
-            background: linear-gradient(135deg, #1e40af, #2563eb); 
-            color: #f9fafb;
-            padding: 10px 18px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            font-size: 16px;
-            margin-left: 10px;
-            cursor: pointer;
-            transition: transform 0.2s ease, background 0.3s;
-
-            &:hover {
-                background: linear-gradient(135deg, #1d4ed8, #2563eb);
-            }
-
-            &:active {
-                transform: scale(0.96);
-            }
-        }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
     }
+
+    .footer-logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
     }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+
+      li {
+        a {
+          text-decoration: none;
+          color: #eaeaea;
+          font-size: 13px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #00d0ff; 
+          }
+        }
+      }
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 20px;
+
+      a {
+        display: inline-block;
+
+        img {
+          width: 22px;
+          height: 22px;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: #999;
+      margin-top: 8px;
+    }
+  }
 }
 
 
-}
+
+
+
+
+
+
+
 
 
 
