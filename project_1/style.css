@@ -183,7 +183,7 @@ html {
   bottom: 0%;
   right: 5%;
 }
-.main .allfeatures .dailygoles {
+.main .allfeatures .games {
   width: 70%;
   height: 300px;
   margin-top: 30px;
@@ -191,7 +191,7 @@ html {
   margin-left: 15%;
   position: relative;
 }
-.main .allfeatures .dailygoles img {
+.main .allfeatures .games img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -203,7 +203,7 @@ html {
   border-radius: 12px;
   transition: transform 0.4s ease;
 }
-.main .allfeatures .dailygoles h1 {
+.main .allfeatures .games h1 {
   color: rgb(255, 255, 255);
   position: absolute;
   bottom: 0%;
@@ -614,6 +614,41 @@ html {
 }
 
 @media (min-width: 900px) {
+  .main .top header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .main .top .header1 {
+    opacity: 80%;
+  }
+  .main .top .header1 h2 {
+    font-size: 2rem;
+  }
+  .main .top .header1 h1 {
+    font-size: 3rem;
+    margin-top: 40px;
+  }
+  .main .top .header1 h4 {
+    font-size: 1.3rem;
+    margin-top: 40px;
+  }
+  .main .top .header2 {
+    opacity: 80%;
+  }
+  .main .top .header2 h2 {
+    margin-top: 10px;
+    color: #ff0000;
+    font-size: 3rem;
+    font-weight: 900;
+  }
+  .main .top .header2 h4 {
+    color: #1e40af;
+    font-size: 1.3rem;
+  }
+  .main .top .header2 h3 {
+    color: #680065;
+  }
   .main .allfeatures {
     flex-direction: row;
     padding: 30px;
@@ -641,7 +676,7 @@ html {
     width: 100%;
     margin-left: 0%;
   }
-  .main .allfeatures .dailygoles {
+  .main .allfeatures .games {
     width: 100%;
     margin-left: 0%;
   }
