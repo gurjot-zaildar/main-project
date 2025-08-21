@@ -291,7 +291,7 @@ potimer();
 function weatherFunctionality() {
   // I have removed API key for security purpose
   var apiKey = null;
-  var city = "punjab";
+  var city = "ropar";
 
   var header1Time = document.querySelector(".header1 h1");
   var header1Date = document.querySelector(".header1 h2");
@@ -379,3 +379,97 @@ function weatherFunctionality() {
 }
 
 weatherFunctionality();
+
+
+function opengame(){
+  
+let alltic = document.querySelectorAll(".tic");
+let fullgamepages = document.querySelectorAll(".fullgame");
+let fullgamebackbtn = document.querySelectorAll(".fullgame .exit");
+
+  alltic.forEach(function (elem) {
+    elem.addEventListener("click", function () {
+      fullgamepages[elem.id].style.display = "block";
+    });
+  });
+
+  fullgamebackbtn.forEach(function (exit) {
+    exit.addEventListener("click", function () {
+      fullgamepages[exit.id].style.display = "none";
+    });
+  });
+}
+opengame()
+
+function game1(){
+  
+let gameboxes = document.querySelectorAll(".boxes");
+let game1resetbtn = document.querySelector(".resetgame1")
+let newgamebtn1=document.querySelector(".newgamebtn1")
+let winmsg=document.querySelector(".winmsg");
+let msg =document.querySelector(".msg")
+
+let turno=true;
+
+const winpatterns=[
+  [0,1,2],[0,3,6],[0,4,8],[1,4,7],[2,5,8],[2,4,6],[3,4,5],[6,7,8]
+];
+const resetgame=()=>{
+turno=true;
+enableboxes()
+winmsg.classList.add("hide")
+}
+
+gameboxes.forEach((boxes)=>{
+  boxes.addEventListener("click",()=>{
+    if(turno){
+      boxes.innerText="O"
+      turno=false;
+
+    }else{
+      boxes.innerText="X";
+      turno=true;
+    }
+    boxes.disabled=true;
+
+    checkwinnergame1();
+  })
+})
+
+const disableboxes=()=>{
+  for(let box of gameboxes){
+    box.disabled=true;
+  }
+}
+const enableboxes=()=>{
+  for(let box of gameboxes){
+    box.disabled=false;
+    box.innerText=""
+  }
+}
+
+const showwinner =(winner)=>{
+msg.innerText=`Congratulations, winner is ${winner}.`
+winmsg.classList.remove("hide");
+disableboxes()
+}
+
+const checkwinnergame1=()=>{
+  for(let pattern of winpatterns){
+    let pos1val =gameboxes[pattern[0]].innerText;
+     let pos2val =gameboxes[pattern[1]].innerText;
+      let pos3val =gameboxes[pattern[2]].innerText;
+
+      if(pos1val !="" && pos2val !="" && pos3val !=""){
+        if(pos1val===pos2val && pos2val===pos3val){
+          showwinner(pos1val);
+        }
+      }
+  }
+}
+newgamebtn1.addEventListener("click",resetgame)
+game1resetbtn.addEventListener("click",resetgame)
+
+}
+
+game1()
