@@ -380,12 +380,10 @@ function weatherFunctionality() {
 
 weatherFunctionality();
 
-
-function opengame(){
-  
-let alltic = document.querySelectorAll(".tic");
-let fullgamepages = document.querySelectorAll(".fullgame");
-let fullgamebackbtn = document.querySelectorAll(".fullgame .exit");
+function opengame() {
+  let alltic = document.querySelectorAll(".tic");
+  let fullgamepages = document.querySelectorAll(".fullgame");
+  let fullgamebackbtn = document.querySelectorAll(".fullgame .exit");
 
   alltic.forEach(function (elem) {
     elem.addEventListener("click", function () {
@@ -399,140 +397,142 @@ let fullgamebackbtn = document.querySelectorAll(".fullgame .exit");
     });
   });
 }
-opengame()
+opengame();
 
-function game1(){
-  
-let gameboxes = document.querySelectorAll(".boxes");
-let game1resetbtn = document.querySelector(".resetgame1")
-let newgamebtn1=document.querySelector(".newgamebtn1")
-let winmsg=document.querySelector(".winmsg");
-let msg =document.querySelector(".msg")
+function game1() {
+  let gameboxes = document.querySelectorAll(".boxes");
+  let game1resetbtn = document.querySelector(".resetgame1");
+  let newgamebtn1 = document.querySelector(".newgamebtn1");
+  let winmsg = document.querySelector(".winmsg");
+  let msg = document.querySelector(".msg");
 
-let turno=true;
+  let turno = true;
 
-const winpatterns=[
-  [0,1,2],[0,3,6],[0,4,8],[1,4,7],[2,5,8],[2,4,6],[3,4,5],[6,7,8]
-];
-const resetgame=()=>{
-turno=true;
-enableboxes()
-winmsg.classList.add("hide")
-}
+  const winpatterns = [
+    [0, 1, 2],
+    [0, 3, 6],
+    [0, 4, 8],
+    [1, 4, 7],
+    [2, 5, 8],
+    [2, 4, 6],
+    [3, 4, 5],
+    [6, 7, 8],
+  ];
+  const resetgame = () => {
+    turno = true;
+    enableboxes();
+    winmsg.classList.add("hide");
+  };
 
-gameboxes.forEach((boxes)=>{
-  boxes.addEventListener("click",()=>{
-    if(turno){
-      boxes.innerText="O"
-      turno=false;
+  gameboxes.forEach((boxes) => {
+    boxes.addEventListener("click", () => {
+      if (turno) {
+        boxes.innerText = "O";
+        turno = false;
+      } else {
+        boxes.innerText = "X";
+        turno = true;
+      }
+      boxes.disabled = true;
 
-    }else{
-      boxes.innerText="X";
-      turno=true;
+      checkwinnergame1();
+    });
+  });
+
+  const disableboxes = () => {
+    for (let box of gameboxes) {
+      box.disabled = true;
     }
-    boxes.disabled=true;
+  };
+  const enableboxes = () => {
+    for (let box of gameboxes) {
+      box.disabled = false;
+      box.innerText = "";
+    }
+  };
 
-    checkwinnergame1();
-  })
-})
+  const showwinner = (winner) => {
+    msg.innerText = `Congratulations, winner is ${winner}.`;
+    winmsg.classList.remove("hide");
+    disableboxes();
+  };
 
-const disableboxes=()=>{
-  for(let box of gameboxes){
-    box.disabled=true;
-  }
-}
-const enableboxes=()=>{
-  for(let box of gameboxes){
-    box.disabled=false;
-    box.innerText=""
-  }
-}
+  const checkwinnergame1 = () => {
+    for (let pattern of winpatterns) {
+      let pos1val = gameboxes[pattern[0]].innerText;
+      let pos2val = gameboxes[pattern[1]].innerText;
+      let pos3val = gameboxes[pattern[2]].innerText;
 
-const showwinner =(winner)=>{
-msg.innerText=`Congratulations, winner is ${winner}.`
-winmsg.classList.remove("hide");
-disableboxes()
-}
-
-const checkwinnergame1=()=>{
-  for(let pattern of winpatterns){
-    let pos1val =gameboxes[pattern[0]].innerText;
-     let pos2val =gameboxes[pattern[1]].innerText;
-      let pos3val =gameboxes[pattern[2]].innerText;
-
-      if(pos1val !="" && pos2val !="" && pos3val !=""){
-        if(pos1val===pos2val && pos2val===pos3val){
+      if (pos1val != "" && pos2val != "" && pos3val != "") {
+        if (pos1val === pos2val && pos2val === pos3val) {
           showwinner(pos1val);
         }
       }
-  }
-}
-newgamebtn1.addEventListener("click",resetgame)
-game1resetbtn.addEventListener("click",resetgame)
-
-}
-
-game1()
-
-
-function game2(){
-  
-let userscore=0;
-let compscore = 0;
-
-let choices = document.querySelectorAll(".choice");
-let msg2= document.querySelector("#msg2");
-let userpoint = document.querySelector("#userscore");
-let comppoint = document.querySelector("#compscore")
-
-const computerchoice=()=>{
-  let opt=["rock","paper","scissors"];
- let randidx= Math.floor(Math.random()*3)
-  return opt[randidx]
-}
-
-const drawgame=()=>{
-msg2.innerText="Game was Draw."
-msg2.style.backgroundColor="pink"
-}
-
-const showwin=(userwin,userchoice,compchoice)=>{
-  if(userwin){
-    userscore++
-    userpoint.innerText=userscore;
-msg2.innerText=`You Win! youy ${userchoice} beats ${compchoice}`;
-msg2.style.backgroundColor="green"
-  }else{
-    compscore++
-    comppoint.innerText=compscore;
-msg2.innerText=`You lost! ${compchoice} beats your ${userchoice}`;
-msg2.style.backgroundColor="red"
-  }
-}
-
-const playgame=(userchoice)=>{
-  let compchoice = computerchoice()
-  if(userchoice==compchoice){
-drawgame()
-  }else{
-    let userwin=true;
-    if(userchoice=="rock"){
-     userwin= compchoice=="paper"? false:true;
-    }else if(userchoice=="paper"){
-      userwin= compchoice=="scissors"?false:true;
-    }else{
-      userwin= compchoice=="rock"?false:true;
     }
-    showwin(userwin,userchoice,compchoice)
-  }
+  };
+  newgamebtn1.addEventListener("click", resetgame);
+  game1resetbtn.addEventListener("click", resetgame);
 }
 
-choices.forEach((choice)=>{
-  choice.addEventListener("click",()=>{
-    const userchoice =choice.getAttribute("id")
-    playgame(userchoice)
-  })
-})
+game1();
+
+function game2() {
+  let userscore = 0;
+  let compscore = 0;
+
+  let choices = document.querySelectorAll(".choice");
+  let msg2 = document.querySelector("#msg2");
+  let userpoint = document.querySelector("#userscore");
+  let comppoint = document.querySelector("#compscore");
+
+  const computerchoice = () => {
+    let opt = ["rock", "paper", "scissors"];
+    let randidx = Math.floor(Math.random() * 3);
+    return opt[randidx];
+  };
+
+  const drawgame = () => {
+    msg2.innerText = "Game was Draw.";
+    msg2.style.backgroundColor = "pink";
+  };
+
+  const showwin = (userwin, userchoice, compchoice) => {
+    if (userwin) {
+      userscore++;
+      userpoint.innerText = userscore;
+      msg2.innerText = `You Win! youy ${userchoice} beats ${compchoice}`;
+      msg2.style.backgroundColor = "green";
+    } else {
+      compscore++;
+      comppoint.innerText = compscore;
+      msg2.innerText = `You lost! ${compchoice} beats your ${userchoice}`;
+      msg2.style.backgroundColor = "red";
+    }
+  };
+
+  const playgame = (userchoice) => {
+    let compchoice = computerchoice();
+    if (userchoice == compchoice) {
+      drawgame();
+    } else {
+      let userwin = true;
+      if (userchoice == "rock") {
+        userwin = compchoice == "paper" ? false : true;
+      } else if (userchoice == "paper") {
+        userwin = compchoice == "scissors" ? false : true;
+      } else {
+        userwin = compchoice == "rock" ? false : true;
+      }
+      showwin(userwin, userchoice, compchoice);
+    }
+  };
+
+  choices.forEach((choice) => {
+    choice.addEventListener("click", () => {
+      const userchoice = choice.getAttribute("id");
+      playgame(userchoice);
+    });
+  });
 }
 
-game2()
+game2();
