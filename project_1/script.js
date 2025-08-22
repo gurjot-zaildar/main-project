@@ -473,3 +473,66 @@ game1resetbtn.addEventListener("click",resetgame)
 }
 
 game1()
+
+
+function game2(){
+  
+let userscore=0;
+let compscore = 0;
+
+let choices = document.querySelectorAll(".choice");
+let msg2= document.querySelector("#msg2");
+let userpoint = document.querySelector("#userscore");
+let comppoint = document.querySelector("#compscore")
+
+const computerchoice=()=>{
+  let opt=["rock","paper","scissors"];
+ let randidx= Math.floor(Math.random()*3)
+  return opt[randidx]
+}
+
+const drawgame=()=>{
+msg2.innerText="Game was Draw."
+msg2.style.backgroundColor="pink"
+}
+
+const showwin=(userwin,userchoice,compchoice)=>{
+  if(userwin){
+    userscore++
+    userpoint.innerText=userscore;
+msg2.innerText=`You Win! youy ${userchoice} beats ${compchoice}`;
+msg2.style.backgroundColor="green"
+  }else{
+    compscore++
+    comppoint.innerText=compscore;
+msg2.innerText=`You lost! ${compchoice} beats your ${userchoice}`;
+msg2.style.backgroundColor="red"
+  }
+}
+
+const playgame=(userchoice)=>{
+  let compchoice = computerchoice()
+  if(userchoice==compchoice){
+drawgame()
+  }else{
+    let userwin=true;
+    if(userchoice=="rock"){
+     userwin= compchoice=="paper"? false:true;
+    }else if(userchoice=="paper"){
+      userwin= compchoice=="scissors"?false:true;
+    }else{
+      userwin= compchoice=="rock"?false:true;
+    }
+    showwin(userwin,userchoice,compchoice)
+  }
+}
+
+choices.forEach((choice)=>{
+  choice.addEventListener("click",()=>{
+    const userchoice =choice.getAttribute("id")
+    playgame(userchoice)
+  })
+})
+}
+
+game2()
