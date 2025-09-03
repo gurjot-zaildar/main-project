@@ -1,30 +1,34 @@
-
-import { useForm } from 'react-hook-form';
-import {nanoid} from 'nanoid'
-import { useContext } from 'react';
+import { useContext } from 'react'
+import { useParams } from 'react-router-dom'
 import { recipecontext } from '../context/RecipeContext';
-import {useNavigate} from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { useForm } from 'react-hook-form';
 
-const Createrecipes = () => {
-  const navigate = useNavigate()
+const SingleRecipes = () => {
+
+  
   const {data,setdata} =useContext(recipecontext);
 
-  const { register, handleSubmit, reset} = useForm();
+  const { register, handleSubmit} = useForm();
 
   const submithandler=(recipe)=>{
-  recipe.id= nanoid();
-  console.log(recipe)
-
-    setdata([...data, recipe]);
-   toast.success("new recipe created!");
-    reset();
-    navigate("/recipes")
+  const index = data.findIndex((recipe)=> params.id == recipe.id)
+  const copydata = [...data];
+  copydata[index]= {...copydata[index],...recipe}
   }
+ 
 
+    const params = useParams();
+    const recipe = data.find((recipe)=> params.id == recipe.id)
 
-  return (
-    <div className='bg-gray-800 text-white p-5 h-screen w-screen'>
+  return recipe ? 
+  <div className='bg-gray-800 h-screen w-screen flex text-white'>
+    <div className='left w-1/2 p-2'>
+      <h1>{recipe.title}</h1>
+      <img className="h-50 w-50 object-cover" src={recipe.image}  />
+    
+    </div>
+
+    <div className='bg-gray-800 text-white p-5 h-screen w-1/2'>
 
       <form onSubmit={handleSubmit(submithandler)}>
 
@@ -70,11 +74,17 @@ const Createrecipes = () => {
         ></textarea>
 
       
-        <button className='block bg-gray-900 rounded-xl mt-10 p-3'>save recipe</button>
+        <button className='block bg-gray-900 rounded-xl mt-10 p-3'>update recipe</button>
+
+           <button className='block bg-red-900 rounded-xl mt-10 p-3'>delete recipe</button>
 
       </form>
     </div>
-  )
+    
+    </div>
+    
+    : "loading"
+  
 }
 
-export default Createrecipes
+export default SingleRecipes

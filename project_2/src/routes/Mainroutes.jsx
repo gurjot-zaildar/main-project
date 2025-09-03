@@ -4,6 +4,7 @@ import {Routes,Route} from 'react-router-dom'
 import About from '../components/About'
 import Createrecipes from '../components/Createrecipes'
 import Recipes from '../components/Recipes'
+import SingleRecipes from '../components/SingleRecipes'
 
 
 const Mainroutes = () => {
@@ -13,6 +14,7 @@ const Mainroutes = () => {
     <Route path='/about' element={<About/>} />
     <Route path='/createrecipes' element={<Createrecipes/>}/>
     <Route path='/recipes' element={<Recipes/>}/>
+     <Route path='/recipes/details/:id' element={<SingleRecipes/>}/>
     
   </Routes>
   )
