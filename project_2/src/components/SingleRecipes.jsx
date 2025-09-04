@@ -1,24 +1,47 @@
 import { useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { recipecontext } from '../context/RecipeContext';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const SingleRecipes = () => {
-
-  
+  const navigate= useNavigate();
   const {data,setdata} =useContext(recipecontext);
+  
+  const params = useParams();
+  const recipe = data.find((recipe)=> params.id == recipe.id)
+  
 
-  const { register, handleSubmit} = useForm();
+  const { register, handleSubmit} = useForm({
+    defaultValues : {
+      title: recipe.title,
+      chef : recipe.chef,
+      image : recipe.image,
+      ingredients : recipe.ingredients,
+      description : recipe.description,
+      category : recipe.category
+
+
+    }
+  });
 
   const submithandler=(recipe)=>{
   const index = data.findIndex((recipe)=> params.id == recipe.id)
   const copydata = [...data];
   copydata[index]= {...copydata[index],...recipe}
+  setdata(copydata)
+  toast.success("recipe updated");
+  navigate("/recipes")
+  }
+
+  const deletehandler = ()=> {
+const filterdata = data.filter((r)=> r.id != params.id);
+ setdata(filterdata)
+ toast.success("recipe deleated")
+ navigate("/recipes")
   }
  
 
-    const params = useParams();
-    const recipe = data.find((recipe)=> params.id == recipe.id)
 
   return recipe ? 
   <div className='bg-gray-800 h-screen w-screen flex text-white'>
@@ -76,7 +99,7 @@ const SingleRecipes = () => {
       
         <button className='block bg-gray-900 rounded-xl mt-10 p-3'>update recipe</button>
 
-           <button className='block bg-red-900 rounded-xl mt-10 p-3'>delete recipe</button>
+           <button onClick={deletehandler} className='block bg-red-900 rounded-xl mt-10 p-3'>delete recipe</button>
 
       </form>
     </div>
