@@ -10,9 +10,10 @@ const Fav = () => {
   ))
 
   return (
-    <div className='bg-gray-800 h-screen w-screen flex flex-wrap text-white'>
+    <div className='bg-pink-100 h-screen'>
+    <div className='flex flex-wrap'>
       {favroite.length > 0 ? renderrecipe : "No favroite recipes found"}
-    </div>
+    </div></div>
   )
 }
 

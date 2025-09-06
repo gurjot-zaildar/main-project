@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <div className='h-screen w-screen lg:flex lg:flex-row-reverse lg:w-3/  '>
+    <div className=' w-screen lg:mt-10 lg:flex lg:flex-row-reverse lg:w-3/  '>
       <div className='lg:w-1/3 lg:mr-auto lg:ml-auto'>
       <img className='h-90  ml-3  lg:mt-20  lg:mr-auto lg:ml-auto' src=".\src\public\img1.png" alt="" />
 
@@ -20,7 +20,6 @@ const Home = () => {
         <button className='border lg:scale-110 lg:hover:bg-pink-500 lg:active:scale-120 lg:hover:text-white   p-2 rounded-4xl font-medium border-pink-500 active:bg-pink-500 active:text-white active:scale-110 text-pink-600'>Join us</button>
        </div>
       </div>
-     <Footer/>
     </div>
   )
 }

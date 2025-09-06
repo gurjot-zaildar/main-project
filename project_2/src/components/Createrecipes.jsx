@@ -49,8 +49,9 @@ const Createrecipes = () => {
          {...register("category")}
         >
 
-          <option  value="Veg">Veg</option>
-           <option value="Non-veg">Non-veg</option>
+          <option  value="Breakfast">Breakfast</option>
+           <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
             
 
         </select>
