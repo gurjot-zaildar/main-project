@@ -12,7 +12,7 @@ const Recipes = () => {
   ))
 
   return (
-    <div className='bg-gray-800 h-screen w-screen flex flex-wrap text-white'>
+    <div className='flex mt-10 gap-10  flex-wrap '>
       {data.length > 0 ? renderrecipe : "No recipes found"}
     </div>
   )

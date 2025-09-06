@@ -4,12 +4,13 @@ import { NavLink } from 'react-router-dom'
 const Navbar = () => {
 
   return (
-    <div className='flex gap-5 justify-center'>
-     <NavLink className={(e)=>e.isActive?"text-pink-400":""} to={"/"} >Home</NavLink>
-     <NavLink className={(e)=>e.isActive?"text-pink-400":""} to={"/about"} >About</NavLink>
-     <NavLink className={(e)=>e.isActive?"text-pink-400":""} to={"/createrecipes"} >create Recipes</NavLink>
-     <NavLink className={(e)=>e.isActive?"text-pink-400":""} to={"/recipes"} > Recipes </NavLink>
-    <NavLink className={(e)=>e.isActive?"text-pink-400":""} to={"/fav"} > Favroite </NavLink>
+    <div className='flex place-content-between  p-2 '>
+    
+     <NavLink className={(e)=>e.isActive?"text-yellow-500 font-bold bg-green-100 rounded-xl p-1":"font-medium z-1 "} to={"/"} >Home</NavLink>
+     <NavLink className={(e)=>e.isActive?"text-yellow-500 font-bold  bg-green-100 rounded-xl p-1":" font-medium"} to={"/about"} >About</NavLink>
+     <NavLink className={(e)=>e.isActive?"text-yellow-500 font-bold  bg-green-100 rounded-xl p-1":"font-medium"} to={"/createrecipes"} >Create Recipes</NavLink>
+     <NavLink className={(e)=>e.isActive?"text-yellow-500 font-bold  bg-green-100 rounded-xl p-1":"font-medium"} to={"/recipes"} > Recipes </NavLink>
+    <NavLink className={(e)=>e.isActive?"text-yellow-500 font-bold  bg-green-100 rounded-xl p-1":"font-medium"} to={"/fav"} > Favroite </NavLink>
 
     </div>
   )

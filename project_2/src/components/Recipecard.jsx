@@ -2,18 +2,23 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 const Recipecard = (props) => {
 
-    const {id,image,title,chef,description} = props.recipe;
+    const {id,image,title,chef,description,category} = props.recipe;
 
   return (
+    <div className=" border  w-2/3 ml-auto mr-auto hover:scale-110 active:scale-105 shadow hover:shadow-lg rounded-2xl">
     <Link
     to={`/recipes/details/${id}`}
-    className='overflow-hidden block p-10'
+    className=''
     >
-    <img className='h-50 w-50 object-cover rounded-xl' src={image} alt="" />
-    <h1>{title}</h1>
-    <small>{chef}</small>
-    <p className='w-50'>{description.slice(0,100)}... <small>more</small> </p>
+    <img className='h-50 w-full rounded-2xl object-cover' src={image} alt="" />
+    <div className='flex '>
+    <h1 className='text-2xl p-2'>{title}</h1>
+    <h1>{category}</h1>
+    </div>
+    <small>👨‍🍳{chef}</small>
+    <p className=''>{description.slice(0,100)}... <small>more</small> </p>
     </Link>
+    </div>
   )
 }
 
