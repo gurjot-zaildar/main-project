@@ -59,7 +59,7 @@ const About = () => {
         <div className="mt-15 mb-7">
           <img
             className="rounded-full lg:w-80 shadow-lg object-cover w-50 ml-auto mr-auto h-50"
-            src=".\public\img3.jpg"
+            src="\img3.jpg"
             alt=""
           />
         </div>

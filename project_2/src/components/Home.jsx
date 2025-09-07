@@ -4,7 +4,7 @@ const Home = () => {
       <div className="lg:w-1/3 lg:mr-auto lg:ml-auto">
         <img
           className="h-90  ml-3  lg:mt-20  lg:mr-auto lg:ml-auto"
-          src=".\public\img1.png"
+          src="img1.png"
           alt=""
         />
       </div>
