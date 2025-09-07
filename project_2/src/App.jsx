@@ -1,16 +1,13 @@
-
-import Navbar from './routes/Navbar'
-import Mainroutes from './routes/Mainroutes'
-
-
+import Navbar from "./routes/Navbar";
+import Mainroutes from "./routes/Mainroutes";
 
 const App = () => {
   return (
     <div>
-      <Navbar/>
-      <Mainroutes/>
+      <Navbar />
+      <Mainroutes />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

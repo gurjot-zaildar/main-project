@@ -1,20 +1,17 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
 
-import { BrowserRouter } from 'react-router-dom'
-import RecipeContext from './context/RecipeContext.jsx'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+import { BrowserRouter } from "react-router-dom";
+import RecipeContext from "./context/RecipeContext.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-
-createRoot(document.getElementById('root')).render(
-<RecipeContext>
+createRoot(document.getElementById("root")).render(
+  <RecipeContext>
     <BrowserRouter>
-        <App />
-        <ToastContainer />
+      <App />
+      <ToastContainer />
     </BrowserRouter>
-</RecipeContext>
-)
-
-
+  </RecipeContext>
+);
